@@ -1,6 +1,6 @@
 // API
 const proxy = 'https://cors-anywhere.herokuapp.com/'
-const ID = 'https://api.kawalcorona.com/indonesia'
+const ID = 'https://covid19.mathdro.id/api/countries/indonesia/confirmed'
 const PROV = 'https://api.kawalcorona.com/indonesia/provinsi'
 const NEGARA = 'https://api.kawalcorona.com'
 // const POSITIF = 'https://api.kawalcorona.com/positif'
@@ -41,9 +41,10 @@ function getProvData() {
         .then(response => {
             console.log(response);
             let i = ''
+            let no = 1;
             response.forEach(p => {
                 const pD = p.attributes;
-                i += tagProvinsi(pD)
+                i += tagProvinsi(pD, no++)
                 rowsProv.innerHTML = i
 
             })
@@ -59,9 +60,10 @@ function getNegaraData() {
         .then(response => response.json())
         .then(response => {
             let o = ''
+            let no = 1;
             response.forEach(n => {
                 const nD = n.attributes;
-                o += tagNegara(nD)
+                o += tagNegara(nD, no++)
                 rowsNegara.innerHTML = o
                 const or = nD.Last_Update
                 const waktu = new Date(or)
@@ -79,29 +81,29 @@ function tagID(id) {
                 <h4 class="">Total Kasus Se-Indonesia</h4>
                 <div class="box box-1 shadow text-light">
                     <img class="conge" src="img/sad.png" alt="">
-                    <span >${id.positif}</span>
+                    <span >${id.confirmed}</span>
                     <h5 class="text-dark">Positif</h5>
                 </div>
                 <div class="box box-2 shadow text-light">
                     <img class = "conge"
                     src ="img/happy.png"
                     alt = "" >
-                    <span >${id.sembuh}</span>
+                    <span >${id.recovered}</span>
                     <h5 class="text-dark">Sembuh</h5>
                 </div>
                 <div class="box box-3 shadow text-light">
                     <img class="conge"
                     src="img/cry.png"
                     alt="" >
-                    <span >${id.meninggal}</span>
+                    <span >${id.deaths}</span>
                     <h5 class="text-dark">Meninggal</h5>
                 </div>
             </div>`
 }
 
-function tagProvinsi(pD) {
+function tagProvinsi(pD, no) {
     return `                <tr>
-                                <th scope="row">1</th>
+                                <th scope="row">${no}</th>
                                 <td>${pD.Provinsi}</td>
                                 <td>${pD.Kasus_Posi}</td>
                                 <td> ${pD.Kasus_Semb} </td>
@@ -110,9 +112,9 @@ function tagProvinsi(pD) {
 }
 
 
-function tagNegara(nD) {
+function tagNegara(nD, no) {
     return ` <tr>
-                                <th scope="row">1</th>
+                                <th scope="row">${no}</th>
                                 <td>${nD.Country_Region}</td>
                                 <td>${nD.Confirmed}</td>
                                 <td> ${nD.Recovered} </td>
