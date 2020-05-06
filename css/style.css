@@ -14,13 +14,17 @@ a {
 
 }
 
+.small {
+    font-size: 14px;
+}
+
 .navbar {
     border-radius: 13px;
     margin: 5px;
 }
 
 .nagbar {
-    font-size: 19px;
+    font-size: 16px;
 
 }
 
@@ -30,12 +34,12 @@ h4 {
 }
 
 .conge {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
 
 }
 
-.rowsID,
+.head,
 .rowsGLB {
     margin-top: 60px;
 }
@@ -52,7 +56,7 @@ h4 {
     text-align: center;
     position: static;
     border-radius: 13px;
-    width: 140px;
+    width: 110px;
     height: 100px;
     display: inline-block;
     padding: 3px;
@@ -80,6 +84,14 @@ h4 {
 }
 
 /* list provinsi */
+
+th {
+    font-size: 12px;
+}
+
+td {
+    font-size: 13px;
+}
 
 .tabled {
     margin-top: 40px;

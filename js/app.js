@@ -16,6 +16,7 @@ const waktuD = document.querySelector('.waktu')
 
 
 getIdData()
+
 getProvData()
 
 
@@ -31,13 +32,14 @@ function getIdData() {
 }
 
 
-getNegaraData()
+
 
 
 function getProvData() {
     return fetch(`${proxy}${PROV}`)
         .then(response => response.json())
         .then(response => {
+            console.log(response);
             let i = ''
             response.forEach(p => {
                 const pD = p.attributes;
@@ -49,7 +51,7 @@ function getProvData() {
 }
 
 
-
+getNegaraData()
 
 
 function getNegaraData() {
@@ -63,7 +65,8 @@ function getNegaraData() {
                 rowsNegara.innerHTML = o
                 const or = nD.Last_Update
                 const waktu = new Date(or)
-                waktuD.innerHTML = `<h6>Update Terakhir : ${waktu.toUTCString()}</h6>`
+                waktuD.innerHTML = `<h6>Update Terakhir : <br>${waktu.toUTCString()}</h6>`
+
             })
         })
 }
