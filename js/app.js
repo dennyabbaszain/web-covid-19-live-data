@@ -19,9 +19,7 @@ const main = async () => {
     const resW = await indo();
     const resIndo = await sDataIndo();
     const resDunia = await sDataDunia();
-    console.log(resW);
-    console.log(resIndo);
-    console.log(resDunia);
+
     let i = '';
     let no = 1;
 
