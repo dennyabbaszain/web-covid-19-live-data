@@ -4,8 +4,6 @@ Web Covid-19 Live-Data
 untuk menjalan kan web nya install extension no CORS di chrome dan mozilla
 karena api terblock oleh CORS
 
-v1.2
+update v1.2
 -Menambahkan fitur async await
--
 -Refactoring 
--
