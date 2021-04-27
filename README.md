@@ -6,5 +6,6 @@ karena api terblock oleh CORS
 
 update v1.2 :
 
-#Menambahkan fitur async await
-#Refactoring 
+*Menambahkan fitur async await
+
+*Refactoring 
