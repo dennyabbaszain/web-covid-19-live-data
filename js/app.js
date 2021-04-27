@@ -13,9 +13,29 @@ const idConfirmed = document.getElementById('confirmed');
 const idRecovered = document.getElementById('recovered');
 const idDeath = document.getElementById('death');
 
+// Getting API Using Async await
+
+const sDataDunia = () => {
+    return fetch(NEGARA)
+        .then((res) => res.json())
+        .then((res) => res);
+};
+
+const sDataIndo = () => {
+    return fetch(PROV)
+        .then((res) => res.json())
+        .then((res) => res);
+};
+
+const indo = () => {
+    return fetch(ID)
+        .then((res) => res.json())
+        .then((res) => res);
+};
+
 // Main Function
 
-const main = async () => {
+(async () => {
     const resW = await indo();
     const resIndo = await sDataIndo();
     const resDunia = await sDataDunia();
@@ -47,29 +67,7 @@ const main = async () => {
             dt.lastUpdate
         )}</h6>`;
     });
-};
-
-// Getting API Using Async await
-
-const sDataDunia = () => {
-    return fetch(NEGARA)
-        .then((res) => res.json())
-        .then((res) => res);
-};
-
-const sDataIndo = () => {
-    return fetch(PROV)
-        .then((res) => res.json())
-        .then((res) => res);
-};
-
-const indo = () => {
-    return fetch(ID)
-        .then((res) => res.json())
-        .then((res) => res);
-};
-
-main();
+})();
 
 // HTML with template literal
 
