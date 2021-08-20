@@ -1,11 +1,7 @@
-#  web_covid-19_live-data
-Web Covid-19 Live-Data
-
-untuk menjalan kan web nya install extension no CORS di chrome dan mozilla
-karena api terblock oleh CORS
+#  web-covid-19-live-data
 
 update v1.2 :
 
-*Menambahkan fitur async await
-
-*Refactoring 
+### Menambahkan fitur async await
+### Fix CORS
+### Refactoring 
