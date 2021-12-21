@@ -1,7 +1,8 @@
 #  web-covid-19-live-data
 
-update v1.2 :
+this is my first custom web using API COVID-19
 
-### Menambahkan fitur async await
-### Fix CORS
-### Refactoring 
+## utilized :
+- VanillaJs 
+- HTML
+- CSS
